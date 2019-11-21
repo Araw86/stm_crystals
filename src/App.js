@@ -2,6 +2,9 @@ import React from 'react';
 import { Typography, Toolbar, AppBar ,Box} from '@material-ui/core';
 import {ThemeProvider, createMuiTheme} from  '@material-ui/core/styles';
 
+import blue from '@material-ui/core/colors/blue';
+import green from '@material-ui/core/colors/green';
+
 import CrystalParameters from './components/CrystalParameters';
 import './App.css';
 
@@ -11,6 +14,10 @@ const theme = createMuiTheme({
   //     fontStyle: 'italic'
   //   }
   // }
+  palette: {
+    primary: blue,
+    secondary: green,
+  }
 });
 
 function App() {
