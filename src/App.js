@@ -1,24 +1,36 @@
 import React from 'react';
-import { Typography, Toolbar, AppBar } from '@material-ui/core';
+import { Typography, Toolbar, AppBar ,Box} from '@material-ui/core';
+import {ThemeProvider, createMuiTheme} from  '@material-ui/core/styles';
+
 import CrystalParameters from './components/CrystalParameters';
 import './App.css';
 
+const theme = createMuiTheme({
+  // typography: {
+  //   button: {
+  //     fontStyle: 'italic'
+  //   }
+  // }
+});
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6">
-              STM Crystal calculation
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header className="App-header">
+          <AppBar position="static">
+            <Toolbar>
+              <Typography variant="h6">
+                STM Crystal calculation
             </Typography>
-          </Toolbar>
-        </AppBar>
-      </header>
-      <body>
-        <CrystalParameters />
-      </body>
-    </div>
+            </Toolbar>
+          </AppBar>
+        </header>
+        <Box>
+          <CrystalParameters />
+        </Box>
+      </div>
+    </ThemeProvider>
   );
 }
 

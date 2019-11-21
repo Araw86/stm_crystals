@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
-import {TextField} from '@material-ui/core';
-import ThemeProvider from '@material-ui/styles/ThemeProvider';
+import { TextField , Box} from '@material-ui/core';
 
 export class CrystalParameters extends Component {
   render() {
     return (
-      <ThemeProvider>
-        <React.Fragment>
-          <TextField
-            hintText="Enter Your First Name"
-            floatingLabelText="First Name"
-            defaultValue="First Name"
-          />
-          <br />
-          <TextField
-            hintText="Enter Your Last Name"
-            floatingLabelText="Last Name"
-          />
-          <br />
-          <TextField
-            hintText="Enter Your Email"
-            floatingLabelText="Email"
-          />
-        </React.Fragment>
-      </ThemeProvider>
+      <Box m={1}>
+        <TextField
+          id="firstName"
+          label="First Name"
+          margin="normal"
+        />
+        <br />
+        <TextField
+          // hintText="Enter Your Last Name"
+          id="flastName"
+          label="Last Name"
+          margin="normal"
+        />
+        <br />
+        <TextField
+          // hintText="Enter Your Email"
+
+          id="email"
+          label="Email"
+          margin="normal"
+        />
+      </Box>
     )
   }
 }
