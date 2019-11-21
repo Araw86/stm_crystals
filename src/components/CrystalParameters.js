@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
-import { TextField , Box} from '@material-ui/core';
+import { TextField, Box, FormControl, InputAdornment, Input, FormHelperText, InputLabel} from '@material-ui/core';
 
 export class CrystalParameters extends Component {
   render() {
     return (
       <Box m={1}>
         <TextField
-          id="firstName"
-          label="First Name"
+          id="c0Value"
+          label="C0"
           margin="normal"
         />
-        <br />
         <TextField
           // hintText="Enter Your Last Name"
-          id="flastName"
-          label="Last Name"
+          id="clValue"
+          label="Cl"
           margin="normal"
         />
-        <br />
-        <TextField
-          // hintText="Enter Your Email"
 
-          id="email"
-          label="Email"
-          margin="normal"
-        />
+        <FormControl>
+        <InputLabel htmlFor="standard-weight-helper-text">C0 capacitance</InputLabel>
+          <Input
+            id="standard-adornment-weight"
+            endAdornment={<InputAdornment position="end">pF</InputAdornment>}
+            aria-describedby="standard-weight-helper-text"
+            inputProps={{
+              'aria-label': 'C0 capacitance',
+            }}
+          />
+          
+          {/* <FormHelperText id="standard-weight-helper-text">C0</FormHelperText> */}
+        </FormControl>
       </Box>
     )
   }
