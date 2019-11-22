@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/stm_crystals/static/css/main.58d1d0f8.chunk.css",
-    "main.js": "/stm_crystals/static/js/main.389a1712.chunk.js",
-    "main.js.map": "/stm_crystals/static/js/main.389a1712.chunk.js.map",
+    "main.js": "/stm_crystals/static/js/main.20b48d4f.chunk.js",
+    "main.js.map": "/stm_crystals/static/js/main.20b48d4f.chunk.js.map",
     "runtime-main.js": "/stm_crystals/static/js/runtime-main.3cb3268f.js",
     "runtime-main.js.map": "/stm_crystals/static/js/runtime-main.3cb3268f.js.map",
-    "static/js/2.d0486ae5.chunk.js": "/stm_crystals/static/js/2.d0486ae5.chunk.js",
-    "static/js/2.d0486ae5.chunk.js.map": "/stm_crystals/static/js/2.d0486ae5.chunk.js.map",
+    "static/js/2.4a6e1758.chunk.js": "/stm_crystals/static/js/2.4a6e1758.chunk.js",
+    "static/js/2.4a6e1758.chunk.js.map": "/stm_crystals/static/js/2.4a6e1758.chunk.js.map",
     "index.html": "/stm_crystals/index.html",
-    "precache-manifest.63acc8bad8123f4a20ab2defc61b2181.js": "/stm_crystals/precache-manifest.63acc8bad8123f4a20ab2defc61b2181.js",
+    "precache-manifest.702f48557e708b4750c3154a54f76ac5.js": "/stm_crystals/precache-manifest.702f48557e708b4750c3154a54f76ac5.js",
     "service-worker.js": "/stm_crystals/service-worker.js",
     "static/css/main.58d1d0f8.chunk.css.map": "/stm_crystals/static/css/main.58d1d0f8.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.3cb3268f.js",
-    "static/js/2.d0486ae5.chunk.js",
+    "static/js/2.4a6e1758.chunk.js",
     "static/css/main.58d1d0f8.chunk.css",
-    "static/js/main.389a1712.chunk.js"
+    "static/js/main.20b48d4f.chunk.js"
   ]
 }
