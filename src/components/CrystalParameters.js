@@ -18,7 +18,7 @@ export class CrystalParameters extends Component {
           </Typography>
           <br/>
             <FormControl>
-              <InputLabel htmlFor="standard-c0-helper-text">C0 capacitance</InputLabel>
+              <InputLabel htmlFor="standard-c0-helper-text">C<sub>0</sub> capacitance</InputLabel>
               <Input
                 id="standard-adornment-c0"
                 endAdornment={<InputAdornment position="end">pF</InputAdornment>}
@@ -32,7 +32,7 @@ export class CrystalParameters extends Component {
             <br />
             <br />
             <FormControl>
-              <InputLabel htmlFor="standard-cl-helper-text">C0 capacitance</InputLabel>
+              <InputLabel htmlFor="standard-cl-helper-text">C<sub>L</sub> capacitance</InputLabel>
               <Input
                 id="standard-adornment-cl"
                 endAdornment={<InputAdornment position="end">pF</InputAdornment>}
