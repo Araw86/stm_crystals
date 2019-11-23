@@ -1,0 +1,76 @@
+{
+  "name": "stm32_gm_list",
+  "type": "familyList",
+  "families": [
+    {
+      "type": "family",
+      "name": "F0 & F3",
+      "gmcritmax": {
+        "type": "multypleDL",
+        "haveChildren": true,
+        "children": [
+          {
+            "type": "DL",
+            "name": "Low",
+            "value": 1,
+            "haveChildren": false
+          },
+          {
+            "type": "DL",
+            "name": "MediumLow",
+            "value": 1.6,
+            "haveChildren": false
+          },
+          {
+            "type": "DL",
+            "name": "MediumHigh",
+            "value": 3,
+            "haveChildren": false
+          },
+          {
+            "type": "DL",
+            "name": "High",
+            "value": 5,
+            "haveChildren": false
+          }
+        ]
+      }
+    },
+    {
+      "type": "family",
+      "name": "F1",
+      "gmcritmax": {
+        "type": "multypleDL",
+        "haveChildren": false,
+        "value": {
+          "type": "DL",
+          "value": 1
+        }
+      }
+    },
+    {
+      "type": "family",
+      "name": "F2",
+      "gmcritmax": {
+        "type": "multypleDL",
+        "haveChildren": false,
+        "value": {
+          "type": "DL",
+          "value": 0.56
+        }
+      }
+    },
+    {
+      "type": "family",
+      "name": "F4 gen 1",
+      "gmcritmax": {
+        "type": "multypleDL",
+        "haveChildren": false,
+        "value": {
+          "type": "DL",
+          "value": 0.56
+        }
+      }
+    }
+  ]
+}
