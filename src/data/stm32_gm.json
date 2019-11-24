@@ -72,5 +72,17 @@
         }
       }
     }
+  ],
+  "dbList": [
+    {
+      "type": "list",
+      "name": "driveLevel",
+      "elements": [
+        {
+          "name": "Normal",
+          "value": 0.56
+        }
+      ]
+    }
   ]
 }
