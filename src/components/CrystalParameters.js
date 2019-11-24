@@ -30,7 +30,7 @@ export class CrystalParameters extends Component {
     };
   }
   calculateGM() {
-    let { c0, cl, esr, f } = this.state;
+    const { c0, cl, esr, f } = this.state;
     let gmcrit =
       4 *
       esr *
@@ -62,6 +62,9 @@ export class CrystalParameters extends Component {
           this.calculateGM();
         }
       );
+      if (input === "cl") {
+        this.props.updateState({ cl: valueToState });
+      }
       // this.calculateGM();
     }
   };

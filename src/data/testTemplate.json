@@ -1,0 +1,59 @@
+{
+  "dbList": [
+    {
+      "type": "list",
+      "name": "",
+      "elements": [
+        {
+          "name": "",
+          "value": 0
+        }
+      ]
+    },
+
+    {
+      "type": "list",
+      "name": "",
+      "elements": [
+        {
+          "elementName": "",
+          "elementType": "number",
+          "elementValue": 0,
+          "elementRefferedBy": [
+            {
+              "listName": "",
+              "elementName": ""
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "list",
+      "name": "",
+      "elements": [
+        {
+          "elementName": "",
+          "elementType": "object",
+          "elementValue": {
+            "elementVal1": {
+              "elementType": "number",
+              "elementValue": 0
+            },
+            "elementVal2": {
+              "elementType": "referenceTo",
+              "elementValue": 0
+            }
+          },
+          "elementRefferedBy": [
+            {
+              "listName": "",
+              "elementName": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
