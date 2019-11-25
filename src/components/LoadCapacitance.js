@@ -19,7 +19,7 @@ export class LoadCapacitance extends Component {
       cl: props.cl,
       cl12: 0.0,
       cs: 0,
-      csString: ""
+      csString: "0"
     };
   }
 

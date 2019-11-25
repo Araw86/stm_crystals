@@ -9,11 +9,8 @@ import {
   Card,
   CardHeader,
   CardContent,
-  Typography,
-  FormHelperText,
-  FormLabel
+  Typography
 } from "@material-ui/core";
-import { typography } from "@material-ui/system";
 
 export class CrystalParameters extends Component {
   constructor(props) {
@@ -40,6 +37,7 @@ export class CrystalParameters extends Component {
       1e6;
     gmcrit = Number(gmcrit.toFixed(4));
     this.setState({ gmcrit: gmcrit });
+    this.props.updateState({ gmcrit: gmcrit });
   }
 
   // handleInputChange = e => {

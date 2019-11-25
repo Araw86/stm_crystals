@@ -1,0 +1,39 @@
+{
+  "dbList": [
+    {
+      "type": "list",
+      "name": "gmTypes",
+      "elements": [
+        {
+          "elementUID": 1,
+          "elementName": "Normal",
+          "elementType": "value",
+          "elementValue": 0.56,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "name": "gmFamilyList",
+      "elements": [
+        {
+          "elementUID": 1,
+          "elementName": "F4 gen 1",
+          "elementType": null,
+          "elementRefferedTo": [
+            {
+              "listName": "gmTypes",
+              "elementUID": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
