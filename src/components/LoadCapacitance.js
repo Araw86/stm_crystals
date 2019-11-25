@@ -27,7 +27,7 @@ export class LoadCapacitance extends Component {
     const cs = this.state.cs;
     const cl = this.props.cl;
     let cl12 = (cl - cs) * 2;
-    if (cl12 != this.state.cl12) {
+    if (cl12 !== this.state.cl12) {
       this.setState({ cl12: cl12 });
     }
   }
