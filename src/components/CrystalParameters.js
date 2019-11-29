@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 import {
   TextField,
   Box,
@@ -10,18 +10,18 @@ import {
   CardHeader,
   CardContent,
   Typography
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 export class CrystalParameters extends Component {
   constructor(props) {
     super(props);
     this.state = {
       c0: 0.0,
-      c0String: "",
+      c0String: '',
       cl: 0.0,
-      clString: "",
+      clString: '',
       esr: 0,
-      esrString: "",
+      esrString: '',
       gmcrit: 0.0,
       f: 32768
     };
@@ -40,30 +40,20 @@ export class CrystalParameters extends Component {
     this.props.updateState({ gmcrit: gmcrit });
   }
 
-  // handleInputChange = e => {
-  //   console.log(e);
-  //   console.log(e.target.value);
-  // }
-
   handleChange = input => e => {
     const value = Number(e.target.value);
-    // console.log(e.target.value);
-    // console.log(value);
-    // console.log(isNaN(value));
+
     if (!isNaN(value)) {
-      // if (typeof value == 'number') {
       const valueToState = Number(value.toFixed(2));
-      // console.log(valueToState);
       this.setState(
-        { [input]: valueToState, [input + "String"]: e.target.value },
+        { [input]: valueToState, [input + 'String']: e.target.value },
         () => {
           this.calculateGM();
         }
       );
-      if (input === "cl") {
+      if (input === 'cl') {
         this.props.updateState({ cl: valueToState });
       }
-      // this.calculateGM();
     }
   };
 
@@ -71,13 +61,10 @@ export class CrystalParameters extends Component {
     return (
       <Box m={1}>
         <Card>
-          <CardHeader
-            title="LSE crystal parameters"
-            subheader="sub header test"
-          />
+          <CardHeader title="LSE crystal parameters" />
           <CardContent>
             <Typography type="p">
-              Please fill the Loading capacitance of cystal and C<sub>0</sub>{" "}
+              Please fill the Loading capacitance of cystal and C<sub>0</sub>{' '}
               capacitance. This values are written in the Datasheet to related
               crystall. Values will be used to calculate compatybility with
               STM32 device
@@ -94,9 +81,9 @@ export class CrystalParameters extends Component {
                 }
                 aria-describedby="standard-c0-helper-text"
                 inputProps={{
-                  "aria-label": "C0 capacitance"
+                  'aria-label': 'C0 capacitance'
                 }}
-                onChange={this.handleChange("c0")}
+                onChange={this.handleChange('c0')}
                 value={this.state.c0String}
               />
               {/* <FormHelperText id="standard-c0-helper-text">Enter valid nunber</FormHelperText> */}
@@ -114,9 +101,9 @@ export class CrystalParameters extends Component {
                 }
                 aria-describedby="standard-cl-helper-text"
                 inputProps={{
-                  "aria-label": "Cl capacitance"
+                  'aria-label': 'Cl capacitance'
                 }}
-                onChange={this.handleChange("cl")}
+                onChange={this.handleChange('cl')}
                 value={this.state.clString}
               />
             </FormControl>
@@ -131,9 +118,9 @@ export class CrystalParameters extends Component {
                 }
                 aria-describedby="standard-esr-helper-text"
                 inputProps={{
-                  "aria-label": "ESR"
+                  'aria-label': 'ESR'
                 }}
-                onChange={this.handleChange("esr")}
+                onChange={this.handleChange('esr')}
                 value={this.state.esrString}
               />
             </FormControl>

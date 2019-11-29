@@ -5,13 +5,173 @@
       "elements": [
         {
           "elementUID": 1,
+          "elementName": "Low",
+          "elementType": "value",
+          "elementValue": 1,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 2,
+          "elementName": "Medium Low",
+          "elementType": "value",
+          "elementValue": 1.6,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 3,
+          "elementName": "Medium High",
+          "elementType": "value",
+          "elementValue": 3,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 4,
+          "elementName": "High",
+          "elementType": "value",
+          "elementValue": 5,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 5,
+          "elementName": "Normal",
+          "elementType": "value",
+          "elementValue": 1,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 6,
           "elementName": "Normal",
           "elementType": "value",
           "elementValue": 0.56,
           "elementRefferedBy": [
             {
               "listName": "gmFamilyList",
-              "elementUID": 1
+              "elementUID": 0
+            },
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 7,
+          "elementName": "Low",
+          "elementType": "value",
+          "elementValue": 0.56,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 8,
+          "elementName": "High",
+          "elementType": "value",
+          "elementValue": 1.5,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 3
+            }
+          ]
+        },
+        {
+          "elementUID": 9,
+          "elementName": "Low",
+          "elementType": "value",
+          "elementValue": 0.5,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 10,
+          "elementName": "Medium Low",
+          "elementType": "value",
+          "elementValue": 0.75,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 11,
+          "elementName": "Medium High",
+          "elementType": "value",
+          "elementValue": 1.7,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 12,
+          "elementName": "High",
+          "elementType": "value",
+          "elementValue": 2.7,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 13,
+          "elementName": "Normal",
+          "elementType": "value",
+          "elementValue": 0.6,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
+            }
+          ]
+        },
+        {
+          "elementUID": 14,
+          "elementName": "Low",
+          "elementType": "value",
+          "elementValue": 0.48,
+          "elementRefferedBy": [
+            {
+              "listName": "gmFamilyList",
+              "elementUID": 0
             }
           ]
         }
@@ -22,12 +182,129 @@
       "elements": [
         {
           "elementUID": 1,
-          "elementName": "F40x/F415/F417/F42x",
+          "elementName": "F0 & F3",
           "elementType": null,
           "elementRefferedTo": [
             {
               "listName": "gmTypes",
               "elementUID": 1
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 2
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 3
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 4
+            }
+          ]
+        },
+        {
+          "elementUID": 2,
+          "elementName": "F1",
+          "elementType": null,
+          "elementRefferedTo": [
+            {
+              "listName": "gmTypes",
+              "elementUID": 5
+            }
+          ]
+        },
+        {
+          "elementUID": 3,
+          "elementName": "F2xx",
+          "elementType": null,
+          "elementRefferedTo": [
+            {
+              "listName": "gmTypes",
+              "elementUID": 6
+            }
+          ]
+        },
+        {
+          "elementUID": 4,
+          "elementName": "F401/F40x/F415/F417/F42x",
+          "elementType": null,
+          "elementRefferedTo": [
+            {
+              "listName": "gmTypes",
+              "elementUID": 6
+            }
+          ]
+        },
+        {
+          "elementUID": 5,
+          "elementName": "F410/F411/F412/F413/F446/Fx9",
+          "elementType": null,
+          "elementRefferedTo": [
+            {
+              "listName": "gmTypes",
+              "elementUID": 7
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 8
+            }
+          ]
+        },
+        {
+          "elementUID": 6,
+          "elementName": "L0 & L4",
+          "elementType": null,
+          "elementRefferedTo": [
+            {
+              "listName": "gmTypes",
+              "elementUID": 9
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 10
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 11
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 12
+            }
+          ]
+        },
+        {
+          "elementUID": 7,
+          "elementName": "L1",
+          "elementType": null,
+          "elementRefferedTo": [
+            {
+              "listName": "gmTypes",
+              "elementUID": 13
+            }
+          ]
+        },
+        {
+          "elementUID": 8,
+          "elementName": "F7 & H7",
+          "elementType": null,
+          "elementRefferedTo": [
+            {
+              "listName": "gmTypes",
+              "elementUID": 14
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 10
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 11
+            },
+            {
+              "listName": "gmTypes",
+              "elementUID": 12
             }
           ]
         }
