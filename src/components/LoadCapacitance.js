@@ -102,7 +102,7 @@ export class LoadCapacitance extends Component {
             <TextField
               label={
                 <Fragment>
-                  C<sub>S</sub>
+                  C<sub>L1</sub> & C<sub>L2</sub>
                 </Fragment>
               }
               id="standard-adornment-cl12"
@@ -113,6 +113,7 @@ export class LoadCapacitance extends Component {
                 readOnly: true
               }}
               value={this.state.cl12}
+              variant="outlined"
             />
           </CardContent>
         </Card>

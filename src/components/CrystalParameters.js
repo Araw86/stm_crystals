@@ -153,6 +153,7 @@ export class CrystalParameters extends Component {
                 readOnly: true
               }}
               value={this.state.gmcrit}
+              variant="outlined"
             />
           </CardContent>
         </Card>
