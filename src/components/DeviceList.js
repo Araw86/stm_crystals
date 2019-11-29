@@ -18,7 +18,28 @@ import dbList from "../data/stm32_gm2.json";
 
 export class DeviceList extends Component {
   render() {
-    console.log(dbList);
+    /* prepare select items */
+
+    const deviceList = dbList["dbList"]["gmFamilyList"].elements;
+    let menuItems = [];
+    menuItems.push(
+      <MenuItem key="none" value="">
+        <em>None</em>
+      </MenuItem>
+    );
+    if (deviceList.length === 0) {
+      /*no items to render */
+      console.log("Check the jsoin surce no devices to show");
+    } else {
+      deviceList.forEach(element => {
+        menuItems.push(
+          <MenuItem key={element.elementUID} value={element.elementUID}>
+            {element.elementName}
+          </MenuItem>
+        );
+      });
+    }
+    console.log(menuItems);
     return (
       <Box m={1}>
         <Card>
@@ -31,15 +52,10 @@ export class DeviceList extends Component {
               <Select
                 labelId="simple-select-device-label"
                 id="simple-select-device"
-                value={"Select Device"}
+                value=""
                 /*onChange={handleChange}*/
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                {menuItems}
               </Select>
             </FormControl>
           </CardContent>

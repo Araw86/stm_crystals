@@ -1,8 +1,7 @@
 {
-  "dbList": [
-    {
+  "dbList": {
+    "gmTypes": {
       "type": "list",
-      "name": "gmTypes",
       "elements": [
         {
           "elementUID": 1,
@@ -18,9 +17,8 @@
         }
       ]
     },
-    {
+    "gmFamilyList": {
       "type": "list",
-      "name": "gmFamilyList",
       "elements": [
         {
           "elementUID": 1,
@@ -35,5 +33,5 @@
         }
       ]
     }
-  ]
+  }
 }
