@@ -1,10 +1,7 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 import {
-  TextField,
   Box,
   FormControl,
-  InputAdornment,
-  Input,
   InputLabel,
   MenuItem,
   Select,
@@ -12,15 +9,27 @@ import {
   CardHeader,
   CardContent,
   Typography
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import dbList from "../data/stm32_gm2.json";
-
+import dbList from '../data/stm32_gm2.json';
+import DeviceListGM from './DeviceListGM';
+import * as dbSearch from '../dataFunctions/dataSearch';
 export class DeviceList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      deviceSelected: ''
+    };
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+  handleSelect(e) {
+    this.setState({ deviceSelected: e.target.value });
+  }
+
   render() {
     /* prepare select items */
 
-    const deviceList = dbList["dbList"]["gmFamilyList"].elements;
+    const deviceList = dbList['dbList']['gmFamilyList'].elements;
     let menuItems = [];
     menuItems.push(
       <MenuItem key="none" value="">
@@ -29,7 +38,7 @@ export class DeviceList extends Component {
     );
     if (deviceList.length === 0) {
       /*no items to render */
-      console.log("Check the jsoin surce no devices to show");
+      console.log('Check the jsoin surce no devices to show');
     } else {
       deviceList.forEach(element => {
         menuItems.push(
@@ -39,7 +48,29 @@ export class DeviceList extends Component {
         );
       });
     }
-    console.log(menuItems);
+    let compareGM = [];
+    if (this.state.deviceSelected !== '') {
+      const deviceGM = dbSearch.getDataByUID(
+        dbList['dbList'],
+        'gmFamilyList',
+        this.state.deviceSelected
+      );
+      console.log(deviceGM);
+      const deviceGMs = dbSearch.getReferenceArray(
+        dbList['dbList'],
+        deviceGM,
+        'gmTypes'
+      );
+      deviceGMs.forEach(element => {
+        compareGM.push(
+          <DeviceListGM
+            key={element.elementUID}
+            gmValueObj={element}
+            gmCompare={this.props.gmcrit}
+          />
+        );
+      });
+    }
     return (
       <Box m={1}>
         <Card>
@@ -52,12 +83,13 @@ export class DeviceList extends Component {
               <Select
                 labelId="simple-select-device-label"
                 id="simple-select-device"
-                value=""
-                /*onChange={handleChange}*/
+                value={this.state.deviceSelected}
+                onChange={this.handleSelect}
               >
                 {menuItems}
               </Select>
             </FormControl>
+            <Box m={1}>{compareGM}</Box>
           </CardContent>
         </Card>
       </Box>
