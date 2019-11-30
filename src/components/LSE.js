@@ -4,6 +4,7 @@ import { Typography, Box, Card, CardHeader } from '@material-ui/core';
 import CrystalParameters from './CrystalParameters';
 import LoadCapacitance from './LoadCapacitance';
 import DeviceList from './DeviceList';
+import PpmCalculation from './PpmCalculation';
 
 export class LSE extends Component {
   constructor(props) {
@@ -40,6 +41,9 @@ export class LSE extends Component {
         </Box>
         <Box>
           <LoadCapacitance cl={this.state.cl} />
+        </Box>
+        <Box>
+          <PpmCalculation fnom={32768} />
         </Box>
       </div>
     );

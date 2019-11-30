@@ -78,7 +78,7 @@ export class DeviceList extends Component {
             <Box m={1}>
               <Typography type="p">
                 Allow to controll if STM32 can work with selected crystal. We
-                are comparing crystall gm<sub>crit</sub>={this.props.gmcrit}uA/V
+                are comparing crystal gm<sub>crit</sub>={this.props.gmcrit}uA/V
                 with STM32 gm<sub>crit max</sub>. This value is taken from STM32
                 datasheet or AN2867.
               </Typography>

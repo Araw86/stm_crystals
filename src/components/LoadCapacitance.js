@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 import {
   TextField,
   Box,
@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardContent,
   Typography
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 export class LoadCapacitance extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ export class LoadCapacitance extends Component {
       cl: props.cl,
       cl12: 0.0,
       cs: 0,
-      csString: "0"
+      csString: '0'
     };
   }
 
@@ -48,7 +48,7 @@ export class LoadCapacitance extends Component {
       const valueToState = Number(value.toFixed(2));
       // console.log(valueToState);
       this.setState(
-        { [input]: valueToState, [input + "String"]: e.target.value },
+        { [input]: valueToState, [input + 'String']: e.target.value },
         () => {
           this.calculateCl12();
         }
@@ -61,10 +61,7 @@ export class LoadCapacitance extends Component {
     return (
       <Box m={1}>
         <Card>
-          <CardHeader
-            title="LSE Load capacitance"
-            subheader="sub header test"
-          />
+          <CardHeader title="LSE Load capacitance" />
           <CardContent>
             <Typography type="p">
               This part is calculating the Load capacitance C<sub>L1</sub> & C
@@ -75,8 +72,8 @@ export class LoadCapacitance extends Component {
             <Typography>
               The stray capacitance is based on the PCB capacitance, STM32
               capacitance and soldering capacitance. So the value is only
-              estimation. Best aproach is to use C<sub>L1</sub> & C<sub>L2</sub>{" "}
-              calculated value. Measure the LSE frequency over MCO. And then
+              estimation. Best aproach is to use C<sub>L1</sub> & C<sub>L2</sub>{' '}
+              calculated value. Measure the LSE frequency over MCO and then
               compensate the offset by changing C<sub>L1</sub> & C<sub>L2</sub>.
             </Typography>
             <br />
@@ -91,9 +88,9 @@ export class LoadCapacitance extends Component {
                 }
                 aria-describedby="standard-cs-helper-text"
                 inputProps={{
-                  "aria-label": "CS"
+                  'aria-label': 'CS'
                 }}
-                onChange={this.handleChange("cs")}
+                onChange={this.handleChange('cs')}
                 value={this.state.csString}
               />
             </FormControl>
