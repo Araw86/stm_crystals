@@ -30,7 +30,6 @@ const useStyles = theme => ({
 
 export class DeviceListGM extends Component {
   render() {
-    console.log(this.props);
     const classes = this.props.classes;
     const gmOK = this.props.gmCompare < this.props.gmValueObj.elementValue;
     let titleString;
@@ -51,7 +50,7 @@ export class DeviceListGM extends Component {
         <Typography>
           This value have too big gain margin and not work with crystals.{' '}
           <b>It is set by default</b> be sure that you are using smaller Drive
-          Mode.
+          Mode. Use this mode only if will be only one possible
         </Typography>
       );
       bgColor = classes.yellow_bg;

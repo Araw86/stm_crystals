@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Typography, Toolbar, AppBar, Box } from "@material-ui/core";
+import React, { Component } from 'react';
+import { Typography, Box, Card, CardHeader } from '@material-ui/core';
 
-import CrystalParameters from "./CrystalParameters";
-import LoadCapacitance from "./LoadCapacitance";
-import DeviceList from "./DeviceList";
+import CrystalParameters from './CrystalParameters';
+import LoadCapacitance from './LoadCapacitance';
+import DeviceList from './DeviceList';
 
 export class LSE extends Component {
   constructor(props) {
@@ -20,13 +20,18 @@ export class LSE extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <AppBar position="static">
-            <Toolbar>
-              <Typography variant="h6">STM Crystal calculation</Typography>
-            </Toolbar>
-          </AppBar>
-        </header>
+        <Box m={1}>
+          <Card>
+            <CardHeader
+              title={
+                <Typography variant="h5">
+                  Help select LSE (32.768kHz) crystall which will work with
+                  STM32
+                </Typography>
+              }
+            />
+          </Card>
+        </Box>
         <Box>
           <CrystalParameters updateState={this.updateState} />
         </Box>

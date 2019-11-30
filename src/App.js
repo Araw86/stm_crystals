@@ -1,10 +1,10 @@
-import React from "react";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import React from 'react';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import blue from "@material-ui/core/colors/blue";
-import green from "@material-ui/core/colors/green";
+import blue from '@material-ui/core/colors/blue';
+import green from '@material-ui/core/colors/green';
 
-import LSE from "./components/LSE";
+import SelectionPage from './components/SelectionPage';
 
 const theme = createMuiTheme({
   // typography: {
@@ -21,7 +21,7 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <LSE />
+      <SelectionPage />
     </ThemeProvider>
   );
 }

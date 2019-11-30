@@ -55,7 +55,6 @@ export class DeviceList extends Component {
         'gmFamilyList',
         this.state.deviceSelected
       );
-      console.log(deviceGM);
       const deviceGMs = dbSearch.getReferenceArray(
         dbList['dbList'],
         deviceGM,
@@ -76,6 +75,14 @@ export class DeviceList extends Component {
         <Card>
           <CardHeader title="Check if STM32 can work with crystal" />
           <CardContent>
+            <Box m={1}>
+              <Typography type="p">
+                Allow to controll if STM32 can work with selected crystal. We
+                are comparing crystall gm<sub>crit</sub>={this.props.gmcrit}uA/V
+                with STM32 gm<sub>crit max</sub>. This value is taken from STM32
+                datasheet or AN2867.
+              </Typography>
+            </Box>
             <FormControl style={{ minWidth: 240 }}>
               <InputLabel id="simple-select-device-label">
                 Select Device Family
