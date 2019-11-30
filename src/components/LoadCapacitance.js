@@ -72,9 +72,11 @@ export class LoadCapacitance extends Component {
             <Typography>
               The stray capacitance is based on the PCB capacitance, STM32
               capacitance and soldering capacitance. So the value is only
-              estimation. Best aproach is to use C<sub>L1</sub> & C<sub>L2</sub>{' '}
-              calculated value. Measure the LSE frequency over MCO and then
-              compensate the offset by changing C<sub>L1</sub> & C<sub>L2</sub>.
+              estimation usually between <b>1.5pF to 5pF</b>. Best aproach is to
+              calculate the C<sub>L1</sub> & C<sub>L2</sub> with C<sub>s</sub>
+              =1.5pF and then with C<sub>s</sub>=5pF. Measure the LSE frequency
+              over MCO and then compensate the offset by changing C<sub>L1</sub>{' '}
+              & C<sub>L2</sub>.
             </Typography>
             <br />
             <FormControl>
