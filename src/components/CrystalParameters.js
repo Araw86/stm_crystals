@@ -12,6 +12,10 @@ import {
   Typography
 } from '@material-ui/core';
 
+import { connect } from 'react-redux';
+
+import { updateStateAction } from '../actions/updateStateAction';
+
 export class CrystalParameters extends Component {
   constructor(props) {
     super(props);
@@ -53,6 +57,7 @@ export class CrystalParameters extends Component {
       );
       if (input === 'cl') {
         this.props.updateState({ cl: valueToState });
+        this.props.updateStateAction({ cl: valueToState });
       }
     }
   };
@@ -149,4 +154,4 @@ export class CrystalParameters extends Component {
   }
 }
 
-export default CrystalParameters;
+export default connect(null, { updateStateAction })(CrystalParameters);
