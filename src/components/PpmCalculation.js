@@ -34,24 +34,19 @@ export class PpmCalculation extends Component {
     const fnom = this.props.fnom;
     // ppm = (Fmeas/Fnom - 1)x1000 000
     const ppm = (fmeas / fnom - 1) * 10000000;
-    this.setState({ ppm: ppm });
+    const roundedPpm = Number(ppm.toFixed(2));
+    this.setState({ ppm: roundedPpm });
   }
   handleChange = input => e => {
     const value = Number(e.target.value);
-    // console.log(e.target.value);
-    // console.log(value);
-    // console.log(isNaN(value));
     if (!isNaN(value)) {
-      // if (typeof value == 'number') {
       const valueToState = Number(value.toFixed(2));
-      // console.log(valueToState);
       this.setState(
         { [input]: valueToState, [input + 'String']: e.target.value },
         () => {
           this.calculatePpm();
         }
       );
-      // this.calculateGM();
     }
   };
 
