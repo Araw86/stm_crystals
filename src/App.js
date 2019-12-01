@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import store from './store';
+import store from './stores/store';
 
 import blue from '@material-ui/core/colors/blue';
 import green from '@material-ui/core/colors/green';
