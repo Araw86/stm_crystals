@@ -1,4 +1,17 @@
 {
-  "LSE": {},
-  "HSE": {}
+  "LSE": {
+    "fixedFrequency": true,
+    "freqeuncyValue": 32768,
+    "frequencyUnit": "Hz",
+    "name": "LSE",
+    "gmUnits": "&mu;A/V",
+    "esrUnits": "k&Omega;"
+  },
+  "HSE": {
+    "fixedFrequency": false,
+    "frequencyUnit": "MHz",
+    "name": "HSE",
+    "gmUnits": "mA/V",
+    "esrUnits": "&Omega;"
+  }
 }

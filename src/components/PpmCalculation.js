@@ -54,7 +54,6 @@ export class PpmCalculation extends Component {
     let ppmAdjust;
     let icon;
     let titleString;
-    console.log(this);
     if (this.state.ppm > 0) {
       icon = <ArrowUpward />;
       titleString = (

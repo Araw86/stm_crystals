@@ -3,8 +3,11 @@ import { Typography, Toolbar, AppBar } from '@material-ui/core';
 
 import LSE from './LSE';
 
+import stm32_lse_hse from '../data/stm32_lse_hse.json';
+
 export class SelectionPage extends Component {
   render() {
+    console.log(stm32_lse_hse);
     return (
       <Fragment>
         <header className="App-header">
@@ -14,7 +17,7 @@ export class SelectionPage extends Component {
             </Toolbar>
           </AppBar>
         </header>
-        <LSE />
+        <LSE input={stm32_lse_hse.LSE} />
       </Fragment>
     );
   }
