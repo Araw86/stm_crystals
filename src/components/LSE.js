@@ -26,8 +26,7 @@ export class LSE extends Component {
             <CardHeader
               title={
                 <Typography variant="h5">
-                  Help select LSE (32.768kHz) crystall which will work with
-                  STM32
+                  Help select LSE (32.768kHz) crystal which will work with STM32
                 </Typography>
               }
             />

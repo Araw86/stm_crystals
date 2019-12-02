@@ -72,8 +72,8 @@ export class CrystalParameters extends Component {
             <Typography type="p">
               Please fill the Loading capacitance of cystal and C<sub>0</sub>{' '}
               capacitance. This values are written in the Datasheet to related
-              crystall. Values will be used to calculate compatybility with
-              STM32 device
+              crystal. Values will be used to calculate compatybility with STM32
+              device
             </Typography>
             <br />
             <FormControl>
