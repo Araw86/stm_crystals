@@ -59,7 +59,7 @@ export class CrystalParameters extends Component {
       this.props.updateState({ gmcrit: gmcrit });
       if (input === 'cl') {
         this.props.updateState({ cl: valueToState });
-        this.props.updateStateAction({ cl: valueToState });
+        this.props.updateStateAction({ lsecl: valueToState });
       }
     }
   };
@@ -157,13 +157,10 @@ export class CrystalParameters extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
-  console.log(ownProps);
   let mappingResult = {};
   ownProps.propsNeeded.forEach(prop => {
     mappingResult[prop] = state.crystal[prop];
   });
-  console.log(mappingResult);
   return mappingResult;
 };
 
