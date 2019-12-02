@@ -1,6 +1,6 @@
 import * as TYPES from '../actions/types';
 
-const initialState = {};
+const initialState = { lsef: 32768, lsecl: 0, lsegmcrit: 0 };
 
 export default function(state = initialState, action) {
   switch (action.type) {

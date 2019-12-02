@@ -41,8 +41,8 @@ export class CrystalParameters extends Component {
       Math.pow((cl + c0) * 1e-12, 2) *
       1e6;
     gmcrit = Number(gmcrit.toFixed(4));
-    this.setState({ gmcrit: gmcrit });
-    this.props.updateState({ gmcrit: gmcrit });
+    console.log(gmcrit);
+    return gmcrit;
   }
 
   handleChange = input => e => {
@@ -50,12 +50,13 @@ export class CrystalParameters extends Component {
 
     if (!isNaN(value)) {
       const valueToState = Number(value.toFixed(2));
-      this.setState(
-        { [input]: valueToState, [input + 'String']: e.target.value },
-        () => {
-          this.calculateGM();
-        }
-      );
+      const gmcrit = this.calculateGM();
+      this.setState({
+        [input]: valueToState,
+        [input + 'String']: e.target.value,
+        gmcrit: gmcrit
+      });
+      this.props.updateState({ gmcrit: gmcrit });
       if (input === 'cl') {
         this.props.updateState({ cl: valueToState });
         this.props.updateStateAction({ cl: valueToState });
@@ -155,6 +156,17 @@ export class CrystalParameters extends Component {
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
+  console.log(state);
+  console.log(ownProps);
+  let mappingResult = {};
+  ownProps.propsNeeded.forEach(prop => {
+    mappingResult[prop] = state.crystal[prop];
+  });
+  console.log(mappingResult);
+  return mappingResult;
+};
+
 // const mapDispatchToProps = (dispatch, ownProps) => {
 //   console.log(ownProps);
 //   return {
@@ -168,5 +180,7 @@ export class CrystalParameters extends Component {
 //   };
 // };
 
-export default connect(null, { updateStateAction })(CrystalParameters);
+export default connect(mapStateToProps, { updateStateAction })(
+  CrystalParameters
+);
 // export default connect(null, mapDispatchToProps)(CrystalParameters);

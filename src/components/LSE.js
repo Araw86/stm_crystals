@@ -35,6 +35,7 @@ export class LSE extends Component {
         <Box>
           <CrystalParameters
             inputConfig={this.props.inputConfig}
+            propsNeeded={['lsef', 'lsecl', 'lsegmcrit']}
             updateState={this.updateState}
           />
         </Box>
