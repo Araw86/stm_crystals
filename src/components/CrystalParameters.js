@@ -15,52 +15,62 @@ import {
 import { connect } from 'react-redux';
 
 import { updateStateAction } from '../actions/updateStateAction';
+// import { threadId } from 'worker_threads';
 // import * as TYPES from '../actions/types';
 
 export class CrystalParameters extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      c0: 0.0,
-      c0String: '',
-      cl: 0.0,
-      clString: '',
-      esr: 0,
-      esrString: '',
-      gmcrit: 0.0,
+      // c0: 0.0,
+      // c0String: '',
+      // cl: 0.0,
+      // clString: '',
+      // esr: 0,
+      // esrString: '',
+      lsec0String: '',
+      lseclString: '',
+      lseesrString: '',
+      // gmcrit: props.lsegmcrit,
       f: 32768
     };
   }
-  calculateGM() {
-    const { c0, cl, esr, f } = this.state;
-    let gmcrit =
-      4 *
-      esr *
-      1e3 *
-      Math.pow(2 * Math.PI * f, 2) *
-      Math.pow((cl + c0) * 1e-12, 2) *
-      1e6;
-    gmcrit = Number(gmcrit.toFixed(4));
-    console.log(gmcrit);
-    return gmcrit;
-  }
+
+  // calculateGM() {
+  //   const { c0, cl, esr, f } = this.state;
+  //   let gmcrit =
+  //     4 *
+  //     esr *
+  //     1e3 *
+  //     Math.pow(2 * Math.PI * f, 2) *
+  //     Math.pow((cl + c0) * 1e-12, 2) *
+  //     1e6;
+  //   gmcrit = Number(gmcrit.toFixed(4));
+  //   console.log(gmcrit);
+  //   return gmcrit;
+  // }
 
   handleChange = input => e => {
     const value = Number(e.target.value);
 
     if (!isNaN(value)) {
       const valueToState = Number(value.toFixed(2));
-      const gmcrit = this.calculateGM();
-      this.setState({
-        [input]: valueToState,
-        [input + 'String']: e.target.value,
-        gmcrit: gmcrit
-      });
-      this.props.updateState({ gmcrit: gmcrit });
-      if (input === 'cl') {
-        this.props.updateState({ cl: valueToState });
-        this.props.updateStateAction({ lsecl: valueToState });
-      }
+      // const gmcrit = this.calculateGM();
+      this.setState(
+        {
+          [input + 'String']: e.target.value
+          // gmcrit: gmcrit
+        },
+        () => {
+          this.props.updateStateAction({ [input]: valueToState });
+        }
+      );
+
+      // this.props.updateState({ gmcrit: gmcrit });
+      // if (input === 'cl') {
+      //   this.props.updateState({ cl: valueToState });
+      //   this.props.updateStateAction({ lsecl: valueToState });
+      // }
     }
   };
 
@@ -90,8 +100,8 @@ export class CrystalParameters extends Component {
                 inputProps={{
                   'aria-label': 'C0 capacitance'
                 }}
-                onChange={this.handleChange('c0')}
-                value={this.state.c0String}
+                onChange={this.handleChange('lsec0')}
+                value={this.state.lsec0String}
               />
               {/* <FormHelperText id="standard-c0-helper-text">Enter valid nunber</FormHelperText> */}
             </FormControl>
@@ -110,8 +120,8 @@ export class CrystalParameters extends Component {
                 inputProps={{
                   'aria-label': 'Cl capacitance'
                 }}
-                onChange={this.handleChange('cl')}
-                value={this.state.clString}
+                onChange={this.handleChange('lsecl')}
+                value={this.state.lseclString}
               />
             </FormControl>
             <br />
@@ -127,8 +137,8 @@ export class CrystalParameters extends Component {
                 inputProps={{
                   'aria-label': 'ESR'
                 }}
-                onChange={this.handleChange('esr')}
-                value={this.state.esrString}
+                onChange={this.handleChange('lseesr')}
+                value={this.state.lseesrString}
               />
             </FormControl>
             <br />
@@ -146,7 +156,7 @@ export class CrystalParameters extends Component {
                 ),
                 readOnly: true
               }}
-              value={this.state.gmcrit}
+              value={this.props.lsegmcrit}
               variant="outlined"
             />
           </CardContent>
