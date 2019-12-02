@@ -33,16 +33,25 @@ export class LSE extends Component {
           </Card>
         </Box>
         <Box>
-          <CrystalParameters updateState={this.updateState} />
+          <CrystalParameters
+            inputConfig={this.props.inputConfig}
+            updateState={this.updateState}
+          />
         </Box>
         <Box>
-          <DeviceList gmcrit={this.state.gmcrit} />
+          <DeviceList
+            inputConfig={this.props.inputConfig}
+            gmcrit={this.state.gmcrit}
+          />
         </Box>
         <Box>
-          <LoadCapacitance cl={this.state.cl} />
+          <LoadCapacitance
+            inputConfig={this.props.inputConfig}
+            cl={this.state.cl}
+          />
         </Box>
         <Box>
-          <PpmCalculation fnom={32768} />
+          <PpmCalculation inputConfig={this.props.inputConfig} fnom={32768} />
         </Box>
       </div>
     );

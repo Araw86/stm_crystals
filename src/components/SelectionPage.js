@@ -17,7 +17,7 @@ export class SelectionPage extends Component {
             </Toolbar>
           </AppBar>
         </header>
-        <LSE input={stm32_lse_hse.LSE} />
+        <LSE inputConfig={stm32_lse_hse.LSE} />
       </Fragment>
     );
   }
