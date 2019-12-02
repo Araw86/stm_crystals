@@ -15,6 +15,7 @@ import {
 import { connect } from 'react-redux';
 
 import { updateStateAction } from '../actions/updateStateAction';
+// import * as TYPES from '../actions/types';
 
 export class CrystalParameters extends Component {
   constructor(props) {
@@ -154,4 +155,18 @@ export class CrystalParameters extends Component {
   }
 }
 
+// const mapDispatchToProps = (dispatch, ownProps) => {
+//   console.log(ownProps);
+//   return {
+//     updateStateAction: objectToUpdate => {
+//       console.log(objectToUpdate);
+//       dispatch({
+//         type: TYPES.UPDATE_STATE,
+//         payload: objectToUpdate
+//       });
+//     }
+//   };
+// };
+
 export default connect(null, { updateStateAction })(CrystalParameters);
+// export default connect(null, mapDispatchToProps)(CrystalParameters);
