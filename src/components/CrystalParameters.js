@@ -22,33 +22,11 @@ export class CrystalParameters extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // c0: 0.0,
-      // c0String: '',
-      // cl: 0.0,
-      // clString: '',
-      // esr: 0,
-      // esrString: '',
       lsec0String: '',
       lseclString: '',
-      lseesrString: '',
-      // gmcrit: props.lsegmcrit,
-      f: 32768
+      lseesrString: ''
     };
   }
-
-  // calculateGM() {
-  //   const { c0, cl, esr, f } = this.state;
-  //   let gmcrit =
-  //     4 *
-  //     esr *
-  //     1e3 *
-  //     Math.pow(2 * Math.PI * f, 2) *
-  //     Math.pow((cl + c0) * 1e-12, 2) *
-  //     1e6;
-  //   gmcrit = Number(gmcrit.toFixed(4));
-  //   console.log(gmcrit);
-  //   return gmcrit;
-  // }
 
   handleChange = input => e => {
     const value = Number(e.target.value);
@@ -65,12 +43,6 @@ export class CrystalParameters extends Component {
           this.props.updateStateAction({ [input]: valueToState });
         }
       );
-
-      // this.props.updateState({ gmcrit: gmcrit });
-      // if (input === 'cl') {
-      //   this.props.updateState({ cl: valueToState });
-      //   this.props.updateStateAction({ lsecl: valueToState });
-      // }
     }
   };
 
