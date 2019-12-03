@@ -18,6 +18,9 @@ import { updateStateAction } from '../actions/updateStateAction';
 // import { threadId } from 'worker_threads';
 // import * as TYPES from '../actions/types';
 
+/**TODO
+ * Must do map to hadnle function more universaly then move to genertion based on json
+ */
 export class CrystalParameters extends Component {
   constructor(props) {
     super(props);
