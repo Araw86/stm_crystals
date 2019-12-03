@@ -4,14 +4,22 @@
     "freqeuncyValue": 32768,
     "frequencyUnit": "Hz",
     "name": "LSE",
-    "gmUnits": "&mu;A/V",
-    "esrUnits": "k&Omega;"
+    "gmUnits": "\u03BCA/V",
+    "esrUnits": "k\u03A9",
+    "c0": "lsec0",
+    "cl": "lsecl",
+    "esr": "lseesr",
+    "gmcrit": "lsegmcrit"
   },
   "HSE": {
     "fixedFrequency": false,
     "frequencyUnit": "MHz",
     "name": "HSE",
     "gmUnits": "mA/V",
-    "esrUnits": "&Omega;"
+    "esrUnits": "\u03A9",
+    "c0": "hsec0",
+    "cl": "hsecl",
+    "esr": "hseesr",
+    "gmcrit": "hsegmcrit"
   }
 }

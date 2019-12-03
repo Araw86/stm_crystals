@@ -36,7 +36,7 @@ export class CrystalParameters extends Component {
       // const gmcrit = this.calculateGM();
       this.setState(
         {
-          [input + 'String']: e.target.value
+          [input]: e.target.value
           // gmcrit: gmcrit
         },
         () => {
@@ -103,7 +103,9 @@ export class CrystalParameters extends Component {
               <Input
                 id="standard-adornment-esr"
                 endAdornment={
-                  <InputAdornment position="end">k&Omega;</InputAdornment>
+                  <InputAdornment position="end">
+                    {this.props.inputConfig.esrUnits}
+                  </InputAdornment>
                 }
                 aria-describedby="standard-esr-helper-text"
                 inputProps={{
@@ -124,11 +126,14 @@ export class CrystalParameters extends Component {
               id="standard-adornment-gmcrit"
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">&mu;A/V</InputAdornment>
+                  // &mu;A/V
+                  <InputAdornment position="end">
+                    {this.props.inputConfig.gmUnits}
+                  </InputAdornment>
                 ),
                 readOnly: true
               }}
-              value={this.props.lsegmcrit}
+              value={this.props.lsemcrit}
               variant="outlined"
             />
           </CardContent>
