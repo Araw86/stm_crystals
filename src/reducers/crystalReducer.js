@@ -19,6 +19,21 @@ function calculateGM({ c0, cl, esr, f }) {
   return { gmcrit: gmcrit };
 }
 
+function calculatePpm({ fmeas, fnom }) {
+  // ppm = (Fmeas/Fnom - 1)x1000 000
+  const ppm = (fmeas / fnom - 1) * 10000000;
+  const roundedPpm = Number(ppm.toFixed(2));
+  return { ppm: roundedPpm };
+}
+
+function calculateCl12({ cs, cl }) {
+  let cl12 = (cl - cs) * 2;
+  if (cl12 !== this.state.cl12) {
+    return { cl12: cl12 };
+  }
+  return {};
+}
+
 const searchFor = [
   {
     payload: ['lsec0', 'lsecl', 'lseesr'],

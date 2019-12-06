@@ -24,11 +24,11 @@ import { updateStateAction } from '../actions/updateStateAction';
 export class CrystalParameters extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      lsec0String: '',
-      lseclString: '',
-      lseesrString: ''
-    };
+    let tempState = {};
+    props.propsNeeded.forEach(prop => {
+      tempState[prop] = '';
+    });
+    this.state = tempState;
   }
 
   handleChange = input => e => {
@@ -50,6 +50,7 @@ export class CrystalParameters extends Component {
   };
 
   render() {
+    const inputConfig = this.props.inputConfig;
     return (
       <Box m={1}>
         <Card>
@@ -75,8 +76,8 @@ export class CrystalParameters extends Component {
                 inputProps={{
                   'aria-label': 'C0 capacitance'
                 }}
-                onChange={this.handleChange('lsec0')}
-                value={this.state.lsec0String}
+                onChange={this.handleChange(inputConfig.c0)}
+                value={this.state[inputConfig.c0]}
               />
               {/* <FormHelperText id="standard-c0-helper-text">Enter valid nunber</FormHelperText> */}
             </FormControl>
@@ -95,8 +96,8 @@ export class CrystalParameters extends Component {
                 inputProps={{
                   'aria-label': 'Cl capacitance'
                 }}
-                onChange={this.handleChange('lsecl')}
-                value={this.state.lseclString}
+                onChange={this.handleChange(inputConfig.cl)}
+                value={this.state[inputConfig.cl]}
               />
             </FormControl>
             <br />
@@ -114,8 +115,8 @@ export class CrystalParameters extends Component {
                 inputProps={{
                   'aria-label': 'ESR'
                 }}
-                onChange={this.handleChange('lseesr')}
-                value={this.state.lseesrString}
+                onChange={this.handleChange(inputConfig.esr)}
+                value={this.state[inputConfig.esr]}
               />
             </FormControl>
             <br />
@@ -136,7 +137,7 @@ export class CrystalParameters extends Component {
                 ),
                 readOnly: true
               }}
-              value={this.props.lsemcrit}
+              value={this.props.lsegmcrit}
               variant="outlined"
             />
           </CardContent>
