@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
   Box,
   FormControl,
@@ -70,6 +70,7 @@ export class DeviceList extends Component {
         );
       });
     }
+    console.log(compareGM);
     return (
       <Box m={1}>
         <Card>
