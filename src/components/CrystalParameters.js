@@ -51,6 +51,28 @@ export class CrystalParameters extends Component {
 
   render() {
     const inputConfig = this.props.inputConfig;
+    // const test = (
+    //   <TextField
+    //     label={
+    //       <Fragment>
+    //         g<sub>mcrit</sub>
+    //       </Fragment>
+    //     }
+    //     id="standard-adornment-gmcrit"
+    //     InputProps={{
+    //       endAdornment: (
+    //         // &mu;A/V
+    //         <InputAdornment position="end">
+    //           {this.props.inputConfig.gmUnits}
+    //         </InputAdornment>
+    //       ),
+    //       readOnly: true
+    //     }}
+    //     value={this.props.lsegmcrit}
+    //     variant="outlined"
+    //   />
+    // );
+    console.log(test);
     return (
       <Box m={1}>
         <Card>

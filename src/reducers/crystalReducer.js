@@ -36,7 +36,7 @@ function calculateCl12({ cs, cl }) {
 
 const searchFor = [
   {
-    payload: ['lsec0', 'lsecl', 'lseesr'],
+    payload: ['lsec0', 'lsecl', 'lseesr'], //list of wanter properties
     call: calculateGM,
     callFormat: [
       { s: 'lsec0', d: 'c0' },
@@ -51,19 +51,26 @@ const searchFor = [
 export default function(state = initialState, action) {
   switch (action.type) {
     case TYPES.UPDATE_STATE:
+      //create new state from action payload
       var newState = { ...state, ...action.payload };
+      //use all patterns on input data
       searchFor.forEach(element => {
-        const propertyName = Object.keys(action.payload);
+        const propertyName = Object.keys(action.payload); //get all property names from action
         if (element.payload.includes(propertyName[0])) {
+          //check if the action property name is in payload list
           let prepareArguments = {};
+          //prepare all arguments used in call function
           element.callFormat.forEach(element => {
-            prepareArguments[element.d] = newState[element.s];
+            prepareArguments[element.d] = newState[element.s]; //now copy the action propery into empty object
           });
+          //all function to handle calculation
           const resultObj = element.call(prepareArguments);
           let newStateElement = {};
+          //now modify output data into state
           element.returnFormat.forEach(element => {
             newStateElement[element.d] = resultObj[element.s];
           });
+          //funaly update state with result from call function
           newState = { ...newState, ...newStateElement };
         }
       });
