@@ -69,6 +69,7 @@ export class RandomComponentConstructor extends Component {
 
   propertyChildren(children) {
     let childrenContent;
+    //check if children is defined
     if (children !== undefined) {
       //check if children is object or array;
       if (Array.isArray(children)) {
@@ -106,34 +107,8 @@ export class RandomComponentConstructor extends Component {
     } else {
       childrenContent = this.props[mapedChildren.prop];
     }
-    //check if children is defined
-    // if (children !== undefined) {
-    //   //check if children is object or array;
-    //   if (Array.isArray(children)) {
-    //     //map throu childrens and generate content fro all of them
-    //     children.forEach(object => {
-    //       childrenContent.push(<RandomCompontConstructor data={object} />);
-    //     });
-    //   } else if (typeof children === 'object') {
-    //     //generate children component
-    //     childrenContent = <RandomCompontConstructor data={children} />;
-    //   } else {
-    //     //children is variable or string
-    //     childrenContent = children;
-    //   }
-    // } else {
-    //   childrenContent = ''; //children content is not existing
-    //   console.log('Children content is not existing');
-    // }
 
     let propertyContent = this.propertySearch(restOfProps);
-    // if (label !== undefined) {
-    //   // console.log(label);
-    //   propertyContent = { label: <Fragment>{label}</Fragment> };
-    // }
-
-    // for (var property in restOfProps);
-    // {...propertyContent}
 
     //check if we have mapedProperty
     if (mapedProps !== undefined) {
