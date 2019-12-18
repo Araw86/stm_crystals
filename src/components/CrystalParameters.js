@@ -72,7 +72,7 @@ export class CrystalParameters extends Component {
     //     variant="outlined"
     //   />
     // );
-    console.log(test);
+    // console.log(test);
     return (
       <Box m={1}>
         <Card>

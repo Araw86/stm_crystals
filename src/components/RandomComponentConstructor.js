@@ -7,6 +7,10 @@ import {
   InputAdornment
 } from '@material-ui/core';
 
+import { connect } from 'react-redux';
+
+import { updateStateAction } from '../actions/updateStateAction';
+
 const components = {
   Fragment: Fragment,
   Button: Button,
@@ -105,7 +109,7 @@ export class RandomComponentConstructor extends Component {
     if (mapedChildren === undefined) {
       childrenContent = this.propertyChildren(children);
     } else {
-      childrenContent = this.props[mapedChildren.prop];
+      childrenContent = this.props[mapedChildren.stateID];
     }
 
     let propertyContent = this.propertySearch(restOfProps);
@@ -126,4 +130,36 @@ export class RandomComponentConstructor extends Component {
   }
 }
 
-export default RandomComponentConstructor;
+const mapStateToProps = (state, ownProps) => {
+  let mappingResult = {};
+
+  const { data } = this.ownProps;
+  //no data no mapping
+  if (data === undefined) {
+    return mappingResult;
+  }
+  //get props to map
+  const { mapedProps, mapedChildren, storeName } = data;
+  //no store name to use
+  if (storeName === undefined || state[storeName] === undefined) {
+    return mappingResult;
+  }
+  //map state to props
+  if (mapedProps !== undefined) {
+    mapedProps.forEach(element => {
+      mappingResult[element.stateID] = state[storeName][element.stateID];
+    });
+  }
+  //map state to children
+  if (mapedChildren !== undefined) {
+    mappingResult[mapedChildren.stateID] =
+      state[storeName][mapedChildren.stateID];
+  }
+
+  return mappingResult;
+};
+
+// export default RandomComponentConstructor;
+export default connect(mapStateToProps, { updateStateAction })(
+  RandomComponentConstructor
+);
